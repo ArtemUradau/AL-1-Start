@@ -20,8 +20,11 @@ namespace Advanced_Lesson_1_OOP
             var square1 = new Square(2);
             var square2 = new Square(4);
 
-            var arr = new Figure [] { circle1, circle2, square1, square2 };
-            for (int i = 0; i < 4; i++)
+            var triangle1 = new Triangle(4);
+            var triangle2 = new Triangle(8);
+
+            var arr = new Figure[] { circle1, circle2, square1, square2, triangle1, triangle2 };
+            for (int i = 0; i < 6; i++)
             {
                 //arr[i].CalcArea();
                 Console.WriteLine(arr[i].CalcArea());
@@ -30,12 +33,13 @@ namespace Advanced_Lesson_1_OOP
             var @int = new Circle(2);
         }
 
+
         public static void @system()
         {
 
         }
 
-        class Circle:Figure
+        class Circle : Figure
         {
             private int rad;
             public Circle(int rad)
@@ -48,7 +52,7 @@ namespace Advanced_Lesson_1_OOP
             }
         }
 
-        class Square:Figure
+        class Square : Figure
         {
             private int a;
             public Square(int a)
@@ -58,6 +62,19 @@ namespace Advanced_Lesson_1_OOP
             public override double CalcArea()
             {
                 return a * a;
+            }
+        }
+
+        class Triangle : Figure
+        {
+            private int a;
+            public Triangle(int a)
+            {
+                this.a = a;
+            }
+            public override double CalcArea()
+            {
+                return (Math.Sqrt(3) / 4) * a * a;
             }
         }
 
@@ -75,6 +92,7 @@ namespace Advanced_Lesson_1_OOP
         /// </summary>
         public static void A_L1_P6_OperatorsOverloading()
         {
+
         }
 
         /// <summary>
@@ -82,7 +100,7 @@ namespace Advanced_Lesson_1_OOP
         /// Продемонстрировать использование в коде. 
         /// </summary>
         public static void A_L1_P7_OperatorsOverloading()
-        {            
-        }        
+        {
+        }
     }
 }
